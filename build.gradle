@@ -50,9 +50,7 @@ minecraft {
     replaceIn "Chisel.java"
     replace "@VERSION@", project.version
 	
-	def args = ' -Dfml.coreMods.load=team.chisel.resourcepacks.common.asm.ChiselResourceCorePlugin'
-	clientJvmArgs += args
-	serverJvmArgs += args
+	coreMod = 'team.chisel.resourcepacks.common.asm.ChiselCorePlugin'
 }
 
 repositories {
@@ -67,7 +65,7 @@ dependencies {
 
 lombok {
     version = "1.16.8"
-    sha256 = "e0a471be03e1e6b02bf019480cec7a3ac9801702bf7bf62f15d077ad4df8dd5d"
+    sha256 = "fe32b29b7b33eb2b19866cbc5345c59c9984a6036cc396856a04c0d09f99ea68"
 }
 
 import net.franz_becker.gradle.lombok.task.DelombokTask
@@ -159,9 +157,8 @@ curseforge {
         changelogType = 'html'
         releaseType = 'alpha'
         mainArtifact(jar) {
-            displayName = "Chisel - ${version}"
+            displayName = "Chisel Resource Packs- ${version}"
         }
-        addArtifact(apiJar)
     }
 }
 
